@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BLÏZ — AR Product Showroom (Demo)</title>
+  <meta name="description" content="Demo visual del showroom AR de BLÏZ Classic Walnut" />
+  <style>
+    :root { --bg:#0f0f10; --fg:#f5f5f7; --muted:#b7b7c1; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    .wrap { max-width:1120px; margin:0 auto; padding:32px 20px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    header .brand { font-weight:700; letter-spacing:1px; }
+    .hero { display:grid; grid-template-columns: 1.1fr 1fr; gap:28px; align-items:center; padding:32px 0; }
+    .hero h1 { font-size:44px; line-height:1.06; margin:0 0 12px; }
+    .cta { display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; }
+    .btn { padding:12px 18px; border-radius:14px; border:1px solid #2a2a2e; background:#161618; color:#fff; text-decoration:none; font-weight:600; }
+    .btn.primary { background:#fff; color:#111; }
+    .card { background:#151519; border:1px solid #2a2a2e; border-radius:18px; padding:16px; }
+    .grid { display:grid; gap:16px; }
+    .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .muted { color:var(--muted); }
+    .qr { width:140px; background:#fff; padding:10px; border-radius:12px; }
+    footer { margin:28px 0 8px; text-align:center; color:var(--muted); font-size:13px; }
+    img.rounded { border-radius:16px; width:100%; display:block; }
+    code.inline { background:#1c1c21; padding:2px 6px; border-radius:8px; }
+    .viewer-mock { background:#0c0c0f; border:1px dashed #2a2a2e; border-radius:18px; padding:12px; text-align:center; }
+    .viewer-mock img { width:100%; height:auto; border-radius:12px; opacity:.95; }
+    .note { font-size:12px; color:#8b8b95; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">BLÏZ — AR Showroom</div>
+      <div class="muted">Demo visual (sin modelo 3D todavía)</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Classic Walnut <br/>en tu espacio, en 1 toque</h1>
+        <p class="muted">Visualiza el difusor BLÏZ en tu mesa, escritorio o repisa usando realidad aumentada. Sin apps, solo un enlace.</p>
+        <div class="cta">
+          <a href="https://bliz-showroom-demo.vercel.app/c/classic-walnut" class="btn primary">Ver demo (URL placeholder)</a>
+          <a href="#embed" class="btn">Incrustar en mi web</a>
+        </div>
+        <div style="margin-top:18px; display:flex; align-items:center; gap:14px;">
+          <img class="qr" src="assets/qr_demo.png" alt="QR demo"/>
+          <div class="muted">Escanéalo desde tu móvil<br/><small>Demo apuntará al visor AR cuando se publique en Vercel.</small></div>
+        </div>
+      </div>
+      <div class="viewer-mock card">
+        <!-- model-viewer real irá aquí cuando tengamos el .glb -->
+        <!--
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <model-viewer src="/models/bliz-classic-walnut.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls autoplay style="width:100%;height:520px"></model-viewer>
+        -->
+        <img src="assets/bliz_3.webp" alt="Mock del visor usando foto real" />
+        <div class="note">Mock del visor usando la foto enviada. El botón “Ver en tu espacio” aparecerá cuando carguemos el modelo 3D.</div>
+      </div>
+    </section>
+
+    <section class="grid cols-3">
+      <div class="card"><img class="rounded" src="assets/bliz_1.webp" alt="Foto 1"/></div>
+      <div class="card"><img class="rounded" src="assets/bliz_2.webp" alt="Foto 2"/></div>
+      <div class="card"><img class="rounded" src="assets/bliz_3.webp" alt="Foto 3"/></div>
+    </section>
+
+    <section id="embed" style="margin-top:28px;">
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Snippet para incrustar (cuando esté el modelo)</h2>
+        <p class="muted">Este código funciona en cualquier web. Cambia la URL por tu ruta real en Vercel.</p>
+        <pre style="overflow:auto; background:#0e0e12; padding:16px; border-radius:12px;"><code>&lt;script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"&gt;&lt;/script&gt;
+&lt;model-viewer src="https://TU-DOMINIO/models/bliz-classic-walnut.glb"
+  ar ar-modes="scene-viewer quick-look webxr"
+  camera-controls autoplay style="width:100%;height:520px"&gt;&lt;/model-viewer&gt;</code></pre>
+      </div>
+    </section>
+
+    <footer>© 2025 BLÏZ — Demo AR Showroom</footer>
+  </div>
+</body>
+</html>
